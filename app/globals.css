@@ -5,11 +5,24 @@
   --foreground: #171717;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-brand-50: #f5f8ff;
+  --color-brand-100: #eaefff;
+  --color-brand-200: #d6ddff;
+  --color-brand-300: #b7c2ff;
+  --color-brand-400: #8e9bff;
+  --color-brand-500: #6576ff;
+  --color-brand-600: #4655e6;
+  --color-brand-700: #3643b3;
+  --color-brand-800: #2b368c;
+  --color-brand-900: #222a6d;
+
+  --shadow-soft: 0 10px 30px rgba(0,0,0,0.08);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -19,8 +32,16 @@
   }
 }
 
+html, body, :root {
+  height: 100%;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
 }
+
+/* Hide scrollbars */
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
