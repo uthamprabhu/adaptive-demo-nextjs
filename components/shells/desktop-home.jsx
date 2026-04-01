@@ -7,6 +7,7 @@ import Image from "next/image";
 import { Button, Card, CardContent, CardActions, Chip } from "@mui/material";
 import { gsap } from "gsap";
 import ThemeToggle from "@/components/theme-toggle";
+import StoryShare from "@/components/story-share";
 
 const products = [
   {
@@ -100,6 +101,10 @@ export default function DesktopHome() {
             ))}
           </div>
         </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-6 lg:px-10 pb-16">
+        <StoryShare className="fade-in" />
       </section>
 
       <footer id="about" className="border-t border-[var(--border)]">

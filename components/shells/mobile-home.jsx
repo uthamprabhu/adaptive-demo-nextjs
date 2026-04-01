@@ -10,6 +10,7 @@ import PersonIcon from "@mui/icons-material/PersonRounded";
 import { Button, Chip } from "@mui/material";
 import { gsap } from "gsap";
 import ThemeToggle from "@/components/theme-toggle";
+import StoryShare from "@/components/story-share";
 
 const picks = [
   {
@@ -87,9 +88,11 @@ export default function MobileHome() {
           ))}
         </div>
 
-        <div className="mt-4 mb-6 m-fade">
+        <div className="mt-4 mb-4 m-fade">
           <Button fullWidth variant="contained" className="rounded-xl">Browse all</Button>
         </div>
+
+        <StoryShare className="m-fade mb-4" />
       </section>
 
       {/* Bottom Nav like Swiggy */}
