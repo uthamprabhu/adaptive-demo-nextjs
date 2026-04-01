@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button, Card, CardContent, CardActions, Chip } from "@mui/material";
 import { gsap } from "gsap";
+import ThemeToggle from "@/components/theme-toggle";
 
 const products = [
   {
@@ -37,8 +38,8 @@ export default function DesktopHome() {
   }, []);
 
   return (
-    <main className="min-h-screen">
-      <header className="sticky top-0 z-50 bg-white/70 backdrop-blur border-b border-gray-100">
+    <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
+      <header className="sticky top-0 z-50 bg-[color:color-mix(in_oklab,var(--surface)_82%,transparent)] backdrop-blur border-b border-[var(--border)]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
           <div className="font-extrabold text-xl tracking-tight">FurniFlow</div>
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -46,7 +47,8 @@ export default function DesktopHome() {
             <a href="#how-it-works" className="hover:text-brand-700">How it works</a>
             <a href="#about" className="hover:text-brand-700">About</a>
           </nav>
-          <div className="flex gap-3">
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Button variant="outlined" size="small">Sign in</Button>
             <Button variant="contained" size="small">Get started</Button>
           </div>
@@ -70,7 +72,7 @@ export default function DesktopHome() {
               </div>
               <CardContent>
                 <div className="font-semibold">{p.title}</div>
-                <div className="text-sm text-gray-600 mt-1">{p.price}</div>
+                <div className="text-sm text-[var(--text-muted)] mt-1">{p.price}</div>
               </CardContent>
               <CardActions className="px-4 pb-4">
                 <Button size="small" variant="contained">View</Button>
@@ -82,7 +84,7 @@ export default function DesktopHome() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="bg-gray-50">
+      <section id="how-it-works" className="bg-[var(--surface-muted)]">
         <div className="mx-auto max-w-7xl px-6 lg:px-10 py-16">
           <h2 className="text-2xl lg:text-3xl font-bold mb-6 fade-in">How it works</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -91,17 +93,17 @@ export default function DesktopHome() {
               { t: "Flex your plan", d: "Rent monthly or buy outright." },
               { t: "We deliver", d: "White-glove delivery and setup." }
             ].map((s, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-white shadow-soft fade-in">
+              <div key={i} className="p-6 rounded-2xl bg-[var(--surface)] border border-[var(--border)] shadow-soft fade-in">
                 <div className="text-lg font-semibold">{s.t}</div>
-                <p className="text-gray-600 mt-2">{s.d}</p>
+                <p className="text-[var(--text-muted)] mt-2">{s.d}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <footer id="about" className="border-t border-gray-100">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-10 text-sm text-gray-600">
+      <footer id="about" className="border-t border-[var(--border)]">
+        <div className="mx-auto max-w-7xl px-6 lg:px-10 py-10 text-sm text-[var(--text-muted)]">
           © {new Date().getFullYear()} FurniFlow. Flexible living. Smarter choices.
         </div>
       </footer>

@@ -23,7 +23,7 @@ export default function ParallaxHero() {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[var(--background)] via-transparent to-transparent" />
       </motion.div>
 
       {/* Floating product */}
@@ -41,11 +41,11 @@ export default function ParallaxHero() {
       <div className="relative z-10 h-full flex flex-col items-start justify-center px-6 lg:px-16">
         <motion.h1
           style={{ opacity: opacityTitle }}
-          className="text-4xl lg:text-6xl font-extrabold tracking-tight text-gray-900 max-w-2xl"
+          className="text-4xl lg:text-6xl font-extrabold tracking-tight text-[var(--foreground)] max-w-2xl"
         >
           Live beautifully. Shop smart. Rent or buy furniture that fits your life.
         </motion.h1>
-        <p className="mt-4 text-lg lg:text-xl text-gray-700 max-w-xl">
+        <p className="mt-4 text-lg lg:text-xl text-[var(--text-muted)] max-w-xl">
           Award-winning designs. Flexible plans. Delivery and setup done right.
         </p>
         <div className="mt-8 flex gap-3">
@@ -57,7 +57,7 @@ export default function ParallaxHero() {
           </a>
           <a
             href="#how-it-works"
-            className="px-6 py-3 rounded-2xl border border-gray-300 hover:border-gray-400 transition"
+            className="px-6 py-3 rounded-2xl border border-[var(--border)] hover:border-brand-600 transition"
           >
             How it works
           </a>

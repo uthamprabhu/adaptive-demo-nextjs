@@ -9,6 +9,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCartRounded";
 import PersonIcon from "@mui/icons-material/PersonRounded";
 import { Button, Chip } from "@mui/material";
 import { gsap } from "gsap";
+import ThemeToggle from "@/components/theme-toggle";
 
 const picks = [
   {
@@ -34,12 +35,15 @@ export default function MobileHome() {
   }, []);
 
   return (
-    <main className="min-h-screen pb-20">
+    <main className="min-h-screen pb-20 bg-[var(--background)] text-[var(--foreground)]">
       {/* Mobile header */}
-      <header className="sticky top-0 z-40 bg-white/80 backdrop-blur border-b border-gray-100">
+      <header className="sticky top-0 z-40 bg-[color:color-mix(in_oklab,var(--surface)_84%,transparent)] backdrop-blur border-b border-[var(--border)]">
         <div className="h-14 px-4 flex items-center justify-between">
           <div className="font-bold">FurniFlow</div>
-          <Button variant="outlined" size="small">Sign in</Button>
+          <div className="flex items-center gap-1">
+            <ThemeToggle />
+            <Button variant="outlined" size="small">Sign in</Button>
+          </div>
         </div>
       </header>
 
@@ -70,14 +74,14 @@ export default function MobileHome() {
               whileTap={{ scale: 0.98 }}
               href="#"
               key={idx}
-              className="rounded-xl overflow-hidden bg-white border border-gray-100 shadow-soft m-fade"
+              className="rounded-xl overflow-hidden bg-[var(--surface)] border border-[var(--border)] shadow-soft m-fade"
             >
               <div className="relative h-28">
                 <Image src={p.img} alt={p.title} fill className="object-cover" />
               </div>
               <div className="p-2">
                 <div className="text-sm font-semibold line-clamp-1">{p.title}</div>
-                <div className="text-xs text-gray-600">{p.price}</div>
+                <div className="text-xs text-[var(--text-muted)]">{p.price}</div>
               </div>
             </motion.a>
           ))}
@@ -89,7 +93,7 @@ export default function MobileHome() {
       </section>
 
       {/* Bottom Nav like Swiggy */}
-      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200">
+      <nav className="fixed bottom-0 left-0 right-0 z-50 bg-[var(--surface)] border-t border-[var(--border)]">
         <div className="h-16 grid grid-cols-4">
           {[
             { icon: <HomeIcon />, label: "Home" },
@@ -99,7 +103,7 @@ export default function MobileHome() {
           ].map((it, i) => (
             <button
               key={i}
-              className="flex flex-col items-center justify-center text-gray-700 hover:text-brand-700"
+              className="flex flex-col items-center justify-center text-[var(--text-muted)] hover:text-brand-700"
             >
               {it.icon}
               <span className="text-[11px] mt-0.5">{it.label}</span>
